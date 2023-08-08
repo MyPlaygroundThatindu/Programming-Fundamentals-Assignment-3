@@ -20,20 +20,24 @@ public class StudentReport {
         System.out.print("Please enter your name: ");
         String name = scanner.nextLine();
         
+        /*Input name*/
         if(name.length() <= 0) {
             System.out.println("Invalid Name");      
         } else {
+            /*Input Age*/
             System.out.print("Please enter your age: ");
             age = scanner.nextInt();
             scanner.nextLine();
             if(age < 10 || age > 18) {
                 System.out.println("Invalid Age");
             } else {
+                /*Input Subject 1 name */
                 System.out.print("Please enter Subject 1: ");
                 sub1 = scanner.nextLine();
                 if(!sub1.startsWith("SE-")) {
                     System.out.println("Invalid Subject");
                 } else {
+                    /*Input Subject 1 marks */
                     System.out.print("Please enter marks for Subject 1: ");
                     marks1 = scanner.nextDouble();
                     scanner.nextLine();
@@ -48,12 +52,13 @@ public class StudentReport {
                         } else {
                             status1 = "\033[31mFail\033[0m";
                         }   
-                        
+                        /*Input Subject 2 name */
                         System.out.print("Please enter Subject 2: ");
                         sub2 = scanner.nextLine();
-                        if(!sub2.startsWith("SE-") || sub2 == sub1) {
+                        if(!sub2.startsWith("SE-") || sub2.equals(sub1)) {
                             System.out.println("Invalid Subject");
                         } else {
+                            /*Input Subject 2 marks */
                             System.out.print("Please enter marks for Subject 2: ");
                             marks2 = scanner.nextDouble();
                             scanner.nextLine();
@@ -68,12 +73,13 @@ public class StudentReport {
                                 } else {
                                     status2 = "\033[31mFail\033[0m";
                                 }
-
+                                /*Input Subject 3 name */
                                 System.out.print("Please enter Subject 3: ");
                                 sub3 = scanner.nextLine();
-                                if(!sub3.startsWith("SE-") || sub3 == sub1 || sub3 == sub2) {
+                                if(!sub3.startsWith("SE-") || sub3.equals(sub1) || sub3.equals(sub2)) {
                                     System.out.println("Invalid Subject");
                                 } else {
+                                    /*Input Subject 3 marks */
                                     System.out.print("Please enter marks for Subject 3: ");
                                     marks3 = scanner.nextDouble();
                                     scanner.nextLine();
@@ -97,28 +103,29 @@ public class StudentReport {
                                         } else {
                                             status = "\033[31mFail\033[0m";
                                         }
+
+                                        System.out.printf("+%s+\n", "-".repeat(47));
+                                        System.out.printf("|Name\t: %-49s|\n", "\033[34;1m" + name.toUpperCase() + "\033[0m");
+                                        System.out.printf("|Age\t: %s %-35s|\n", age, "years old" );
+                                        System.out.printf("|Status\t: %-47s|\n", status);
+                                        System.out.printf("|Total\t: %.2f\tAverage : %-14.2f|\n", total, avg, "%" );
+                                        System.out.printf("+%s+\n", "-".repeat(47));
+                                        System.out.printf("|%-15s|%-12s|%-18s|\n", "Subject", "Marks", "Status" );
+                                        System.out.printf("+%s+\n", "-".repeat(47));
+                                        System.out.printf("|%-15s|%-12s|%-20s\t|\n", sub1, marks1, status1);
+                                        System.out.printf("|%-15s|%-12s|%-20s\t|\n", sub2, marks2, status2);
+                                        System.out.printf("|%-15s|%-12s|%-20s\t|\n", sub3, marks3, status3);
+                                        System.out.printf("+%s+\n", "-".repeat(47));
                                     }
                                 }
                             }
-
                         }
+            
                             
-                        
-                            System.out.printf("+%s+\n", "-".repeat(47));
-                            System.out.printf("|Name\t: %-49s|\n", "\033[34;1m" + name.toUpperCase() + "\033[0m");
-                            System.out.printf("|Age\t: %s %-35s|\n", age, "years old" );
-                            System.out.printf("|Status\t: %-47s|\n", status);
-                            System.out.printf("|Total\t: %.2f\tAverage : %-14.2f|\n", total, avg, "%" );
-                            System.out.printf("+%s+\n", "-".repeat(47));
-                            System.out.printf("|%-15s|%-12s|%-18s|\n", "Subject", "Marks", "Status" );
-                            System.out.printf("+%s+\n", "-".repeat(47));
-                            System.out.printf("|%-15s|%-12s|%-20s\t|\n", sub1, marks1, status1);
-                            System.out.printf("|%-15s|%-12s|%-20s\t|\n", sub2, marks2, status2);
-                            System.out.printf("|%-15s|%-12s|%-20s\t|\n", sub3, marks3, status3);
-                            System.out.printf("+%s+\n", "-".repeat(47));
                         }
                     }
                 }
+
         }
 
         closer:
