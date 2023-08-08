@@ -104,6 +104,7 @@ public class StudentReport {
                                             status = "\033[31mFail\033[0m";
                                         }
 
+                                        /*Out put */
                                         System.out.printf("+%s+\n", "-".repeat(47));
                                         System.out.printf("|Name\t: %-49s|\n", "\033[34;1m" + name.toUpperCase() + "\033[0m");
                                         System.out.printf("|Age\t: %s %-35s|\n", age, "years old" );
@@ -119,13 +120,10 @@ public class StudentReport {
                                     }
                                 }
                             }
-                        }
-            
-                            
-                        }
+                        }         
                     }
                 }
-
+            }
         }
 
         closer:
